@@ -1,0 +1,15 @@
+Query to deplicate Email:
+select email from person group by email having count(*)>1
+
+This senario is like delete the duplicate email from the table
+delete from (select email from person group by email having count(*) >1 as email)
+
+Customers who never order:
+select name as Customers from customers where id not in(select customerid from orders)
+Combine two tables:
+select  p.firstname, p.lastname, a.city,  a.state from Person p left join Address a on p.personid = a.personid;
+
+Employee earning salary more than their managers
+select name as Employee from employee where managerid is not null order by salary limit 1
+
+
