@@ -1,1 +1,9 @@
+Fetch first 3 rows
+SELECT * FROM  hr.employees FETCH FIRST 3 ROWS ONLY; -- oracle
+select top 3 from hr.employees - sql
+select * from hr.employees  limit 3;- sql
+
+Aggregate Functions:
+------
+MIN, MAX, AVG, SUM, COUNT
 
