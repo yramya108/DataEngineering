@@ -1,1 +1,2 @@
-
+This senario is like delete the duplicate email from the table
+delete from (select email from person group by email having count(*) >1 as email)
