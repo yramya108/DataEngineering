@@ -7,3 +7,40 @@ Aggregate Functions:
 ------
 MIN, MAX, AVG, SUM, COUNT
 
+--select FIRST_name,lower(first_name), last_name from hr.employees
+
+--SELECT * FROM  hr.employees FETCH FIRST 3 ROWS ONLY;
+select count(*) from Hr.employees  where salary> 2400 --102
+select sum(salary) from Hr.employees  where salary> 2400 --680116
+select avg(salary) from Hr.employees  where salary> 2400
+
+select min(salary) from Hr.employees - 2100
+select max(salary) from Hr.employees
+
+SELECT LENGTH('SQL Tutorial') from dual
+
+SELECT CONCAT('SQL ', 'Tutorial', 'is ', 'having fun') from dual
+
+SELECT CONCAT_WS('_','SQL ', 'Tutorial', 'is ', 'having fun') from dual -- not able to understand why it is failing
+
+SELECT FIELD("q", "s", "q", "l");
+
+s
+
+select upper('Data'),lower('Data'),length('Data '),
+initcap('Data engineering'),ltrim(' Data'),rtrim(' Data ')
+from dual
+
+select repeat('Ramya',3) from dual
+
+select POSITION('a' in first_name) from hr.employees -- this is am getting error how to find the position if substring
+
+SELECT LEFT(first_name, 5) AS ExtractString
+FROM Hr.employees;
+
+select reverse(first_name) from hr.employees
+SELECT REPLACE('SQL Tutorial', 'SQL', 'HTML') from dual;
+
+select space(3) from dual
+SELECT SUBSTR('SQL Tutorial', 1, 3) from dual;
+SELECT greatest(3, 12, 34, 8, 25); -- why cannot we use max here
