@@ -12,4 +12,7 @@ select  p.firstname, p.lastname, a.city,  a.state from Person p left join Addres
 Employee earning salary more than their managers
 select name as Employee from employee where managerid is not null order by salary limit 1
 
+--- group by and order by
+SELECT user_id,max(extract(day from post_date))-min(extract(day from post_date)) as days_inbetween FROM posts where extract(year from post_date)=2021 group by user_id having count(*)>1
+
 
