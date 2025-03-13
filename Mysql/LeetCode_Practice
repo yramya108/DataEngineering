@@ -15,4 +15,10 @@ select name as Employee from employee where managerid is not null order by salar
 --- group by and order by
 SELECT user_id,max(extract(day from post_date))-min(extract(day from post_date)) as days_inbetween FROM posts where extract(year from post_date)=2021 group by user_id having count(*)>1
 
+--list down emp who have bounes <1000
+select e.name,b.bonus from employee e left join 
+bonus b
+on e.empid=b.empid where b.bonus<=500 or bonus is null
+
+
 
