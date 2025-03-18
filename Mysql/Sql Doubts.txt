@@ -1,0 +1,13 @@
+DOubts:
+When to use sum over function
+
+difference between row_number and rank 
+
+in this example  lead function uses and diff is used with sal, but the diffwith next highest sal, how we will come to know that sal is nexxt value only.
+
+-- 11. Find the salary difference between each employee and the next highest-paid employee.
+-- Uses LEAD() to compare an employee's salary with the next highest.
+
+SELECT employee_id, salary, 
+       LEAD(salary) OVER (ORDER BY salary DESC) - salary AS salary_diff
+FROM hr.employees;
