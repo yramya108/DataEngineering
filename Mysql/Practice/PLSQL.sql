@@ -93,4 +93,35 @@ BEGIN
    END LOOP;
 END;
 
+-- using case statement
+Declare
+emp_Status varchar2(20);
+BEGIN
+    select case when salary>50000 then 'high salary'
+    else 'low salary'
+    END into emp_Status from hr.employees where employee_id =101;
+DBMS_OUTPUT.PUT_LINE('emp_sal' || ':' || emp_Status);
+end;
+
+
+--fetch max salry
+
+DECLARE
+sal number ;
+BEGIN
+    select max(salary) into sal from hr.employees where EMPLOYEE_ID=101;
+    dbms_output.put_line('emp sal' ||':'|| sal);
+end;
+
+ -- using case
+ declare
+ emp_exist varcahr2(20);
+ BEGIN
+    select case exists (select 1 from hr.employees where employee_id =1) then 'yes'
+        else 'no' 
+    end into emp_exist FROM dual;
+    dbms_output.put_line('emp status'|| ':'||emp_exist);
+end;
+
+
  
